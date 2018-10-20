@@ -1,0 +1,588 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agenda Application - Contacts </title>
+	<link rel="stylesheet" href="./css/style.css" />
+	
+  <style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+     border: 1px green;
+     font-size: 11px;
+}
+
+#table1 {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+//background-color: #f2f2f2;
+background-color: lightsteelblue;
+}
+
+tr:nth-child(even) {
+//background-color: #f2f2f2;
+background-color: ghostwhite;
+}
+
+th{
+font-size-12px;
+color: white;
+background-color: steelblue;
+}
+
+
+
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	align:center;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+	align:center;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
+
+
+
+
+
+
+.modalDialog {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+    }
+
+    .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 400px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+    .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover { background: #00d9ff; }
+
+</style>
+</head>
+
+<body>
+
+  <div class="imgloc">
+    <img style="max-width: 100%;" src="./img/tcs501.jpg">
+  </div>
+
+<header>
+  <div class="container">
+
+   <ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li class="current"><a href="meetings.html">Meetings</a></li>   		
+  </ul>
+
+</div>
+</header>
+
+
+<section id="main">
+  <div class = "container">
+   <article id="main-col">
+    <!-- <h1 class="page-title"> MEETING DETAILS</h1> -->
+</br>
+<!--
+<table id="table1">
+  <tr>
+    <th>Session</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Duration</th>
+    <th>Speaker</th>
+  </tr>
+  <tr>
+    <td>Start from hotel</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+<td>
+
+<button id="myBtn"> Mr.Anudeep Kumar</button>
+
+        
+        <div id="myModal" class="modal">
+
+         
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Name: Mr Anudeep Kumar</p>
+            <p>Meeting is to be organized about the innovations which are done by TCS in the field of Digital Banking.</p>
+            <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+          </div>
+
+        </div>
+
+</td>  
+</tr>
+  <tr>
+    <td>Security Check/Arrival to Board Room</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+
+<button id="myBtn"> Mr.Anudeep Kumar</button>
+
+       
+        <div id="myModal" class="modal">
+
+          
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Name: Mr Anudeep Kumar</p>
+            <p>Meeting is to be organized about the innovations which are done by TCS in the field of Digital Banking.</p>
+            <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+          </div>
+
+        </div>
+
+</td>  
+</tr>
+  <tr>
+    <td>Welcome/Introductions</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<div class="popup" onclick="myFunction()">Veera Raghava
+  <span class="popuptext" id="myPopup">
+Name: Mr.Veera Raghava
+Description: Coordination to start from the hotel 
+<p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</span>
+</div>
+</td>  
+</tr>
+  <tr>
+    <td>About Tata, TCS and BFSI Unit</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<div class="popup" onclick="myFunction()">Aravinda Sametha
+  <span class="popuptext" id="myPopup">
+Name: Ms.Aravinda Sametha
+Description: Coordination to start from the hotel 
+<p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</span>
+</div>
+</td>  
+</tr>
+  <tr>
+    <td>Business 4.0- How are we helping customers in their modernization/ Digital/ Customer
+Experience Journey</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>Aravinda sametha</td>  
+</tr>
+  <tr>
+    <td>TCS Machine Frist Model- How Intelligent Automation/ RPA is Helping Various
+Cutomers in thier Journey</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>Aravinda sametha</td>  
+</tr>
+  <tr>
+    <td>Dinner</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>Aravinda sametha</td>  
+</tr>
+</table>
+-->
+<table id="table1">
+  <tr>
+    <th>Session</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Duration</th>
+    <th>Speaker</th>
+  </tr>
+  <tr>
+    <td>Start from hotel</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+<td>
+<a href="#openModal1">Ms. Aravinda Sametha</a>
+
+<div id="openModal1" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Ms. Aravinda Sametha</h2>
+    <p>Description: Ms. Aravinda Sametha will coordingate from the start of the Hotel</p>
+    <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+
+</td>  
+</tr>
+  <tr>
+    <td>Security Check/Arrival to Board Room</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<a href="#openModal2">Mr. Veera Raghava</a>
+
+  <div id="openModal2" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Veera Raghava</h2>
+    <p><strong>Mr. Veera Raghava will corrdinate at the arrival of the Board Room</strong></p>
+    <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+
+</td>  
+</tr>
+  <tr>
+    <td>Welcome/Introductions</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<a href="#openModal3">Mr. Vijay </a>
+
+  <div id="openModal3" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Vijay  </h2>
+    <p><strong>Mr. Vijay will introduce the meeting</strong></p>
+    <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+</td>  
+</tr>
+  <tr>
+    <td>About Tata, TCS and BFSI Unit</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<a href="#openModal4">Mr. Sameer </a>
+
+  <div id="openModal4" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Sameer  </h2>
+    <p><strong>Mr. Sameer will speak abou Tata, TCS and BFSI.</strong></p>
+    <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+</td>  
+</tr>
+  <tr>
+    <td>Business 4.0- How are we helping customers in their modernization/ Digital/ Customer
+Experience Journey</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>
+<a href="#openModal5">Mr. Bansal </a>
+
+  <div id="openModal5" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Bansal </h2>
+    <p><strong>Mr. Bansal will help customers in thier modernizaiton Experience</strong></p>
+    <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+</td>  
+</tr>
+  <tr>
+    <td>TCS Machine Frist Model- How Intelligent Automation/ RPA is Helping Various
+Cutomers in thier Journey</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td></td>  
+</tr>
+  <tr>
+    <td>Dinner</td>
+    <td>9:00</td>
+    <td>10:00</td>
+    <td>1:00</td>
+    <td>Aravinda sametha</td>  
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+    <!--<ul id="services">
+     <li>
+      <h3>Meeting 1</h3>
+      <p> Date - 15/01/2018
+        <p>Time of Meeting - 10:00 AM to 11:00 AM</p>
+        
+        <b>Chair</b> 
+        <button id="myBtn"> Mr.Anudeep Kumar</button>
+
+        
+        <div id="myModal" class="modal">
+
+          
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Name: Mr Anudeep Kumar</p>
+            <p>Meeting is to be organized about the innovations which are done by TCS in the field of Digital Banking.</p>
+            <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+          </div>
+
+        </div>
+
+
+      </li>
+      <li>
+        <h3>Meeting 2</h3>
+        <p> Date - 15/01/2018
+          <p>Time of Meeting - 11:00 AM to 12:00 PM</p>
+         
+          <b>Chair</b> 
+          <button id="myBtn"> Mr.Anudeep Kumar</button>
+
+         
+          <div id="myModal" class="modal">
+
+           
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Name: Mr Anudeep Kumar</h2>
+              <p>Meeting is to be organized about the innovations which are done by TCS in the field of Digital Banking.</p>
+              <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <h3>Meeting 3</h3>
+          <p> Date - 15/01/2018
+            <p>Time of Meeting - 1:00 PM to 2:00 PM</p>
+            
+            <b>Chair</b> 
+            <button id="myBtn"> Mr.Anudeep Kumar</button>
+
+          
+            <div id="myModal" class="modal">
+
+             
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Name: Mr Anudeep Kumar</p>
+                <p>Meeting is to be organized about the innovations which are done by TCS in the field of Digital Banking.</p>
+                <p> Call : <a href="tel:5551234567">(555)123-4567</a></p>
+              </div>
+
+            </div>
+          </li>
+        </ul>-->
+
+      </article>
+      		
+   </div>
+ </section>
+
+
+	<div class="imgloc">
+		<img style="max-width: 100%;" src="./img/tcsfooter.jpg">
+	</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html> 
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agenda Application - Contacts </title>
+	<link rel="stylesheet" href="./css/style.css" />	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script> 
+$(document).ready(function(){
+
+  $('div.dropdown').each(function() {
+    var $dropdown = $(this);
+
+    $("a.dropdown-link", $dropdown).click(function(e) {
+      e.preventDefault();
+      $div = $("div.dropdown-container", $dropdown);
+      $div.toggle();
+      $("div.dropdown-container").not($div).hide();
+      return false;
+    });
+
+});
+    
+  $('html').click(function(){
+    $("div.dropdown-container").hide();
+  });
+     
+});
+	</script>	
+</head>
+<body>
+
+	<div class="imgloc">
+		<img style="max-width: 100%;" src="./img/tcs501.jpg">
+	</div>
+	<header>
+		<div class="container">
+
+			<ul class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li class="current"><a href="places.html">Places</a></li>   		
+			</ul>
+
+		</div>
+	</header>
+
+
+
+
+
+
+
+
+	<section id="main">
+		<div class = "container">
+			<article id="main-col">
+				<h1 class="page-title">  Places to Visit in Hyderabad</h1>
+				<p>Hyderabad is the capital of southern India's Telangana state. Its historic sites include Golconda Fort, the Charminar, Hussain Sagar Lake and the famous Ramoji Film City.</p>
+				<ul id="services">
+					<li>
+
+<div id="dropdown-1" class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#" style="text-decoration: none;"><h2 style="color: black;" >Charminar</h2></a>
+  <div class="dropdown-container" style="display: none;">
+    <a href="#" style="text-decoration: none;"><div class="expander" ></div></a>
+
+						<div class="text">
+							<div class="imgloc">
+								<img style="max-width: 100%;" src="./img/charminar.jpg">
+							</div>
+							<p>  Hyderabad tour is incomplete without a visit to Charminar. An amazing blend of Indo-Islamic architecture, Charminar represents the glorious history of the city. Built in 1591 by Sultan Mohammed Quli Qutb Shah, Charminar is a square-shaped structure which is 56 meters high and 30 meters wide. Popularly known as ‘Arc de Triomphe of the East’, Charminar was constructed in the honour of Bhagmati, wife of Sultan Mohammed Quli Qutb Shah; immediately after he had shifted his capital to Hyderabad, which was earlier in Golconda. The name Charminar, which means “four (chaar)” “pillars (minars)” came from its structure which consists of four intricately carved pillars, one on each side.
+
+							</p></br>
+
+            <!-- <p>The inspiration of this design is said to have come from Shia "tazias" which have been built in the honour of son-in-law of Prophet Mohammad, Hussain. This square shaped architecture has towers in each of the four corners with all the sides of 20 metres in length. It has been built of granite and lime mortar. Each side opens into a plaza through giant arches, overlooking four major thoroughfares. Each arch has a width of 11 metres and height of 20 metres. The minarets cover a length of 48.7 metres from the ground to the apex. Each minaret of the building has four storeys. One can see the motif of Qutub Shahi buildings in the way each minaret has been constructed over base which looks like lotus leaf.
+            </p>
+        -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.045081862936!2d78.47247581463701!3d17.361563588094054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb978a6e1a939b%3A0xcb5a69e4aaf113fb!2sCharminar!5e0!3m2!1sen!2sin!4v1539050974421" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="dropdown-2" class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#" style="text-decoration: none;"><h2 style="color: black;" >Hussain Sagar Lake</h2></a>
+  <div class="dropdown-container" style="display: none;">
+<a href="#"style="text-decoration: none;"><div class="expander" ></div></a>
+
+    <div class="text">
+    	<div class="imgloc">
+    		<img style="max-width: 100%;" src="./img/hussain.jpg">
+    	</div>
+    	<p>  Hussain Sagar is a necklace shaped lake in Hyderabad built by Ibrahim Quli Qutb Shah, and named after Hussain Shah Wali. It is spread across an area of 5.7 square kilometers and is fed by River Musi. A large monolithic statue of the Gautama Buddha, erected in 1992, stands on Gibraltar Rock in the middle of the lake.
+    	</p></br>
+
+
+
+    	<<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30453.946036246158!2d78.45700697508592!3d17.424104735610744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97558c2e9b6b%3A0x25705363cc844e9d!2sHussain+Sagar!5e0!3m2!1sen!2sin!4v1539290664529" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="dropdown-3" class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#" style="text-decoration: none;"><h2 style="color: black;" >Ramoji Film City</h2></a>
+  <div class="dropdown-container" style="display: none;">
+     <a href="#"style="text-decoration: none;"><div class="expander" ><h2 style="color: black;" ></h2></div></a>
+
+    <div class="text">
+    	<div class="imgloc">
+    		<img style="max-width: 100%;" src="./img/ramoji.jpg">
+    	</div>
+    	<p>  One of the largest and glamorous film studios in the world, Ramoji Film City has also place in the Guinness Book of World Records. Spread across an area of almost 2500 acres, it is one of the major film making facility of the country offering everything related to pre and post film production. The architecture of the studio and the wide range of settings makes it one of the favourite spot for many film makers.
+
+With a capacity to accommodate close to 50 film units at the same time, Ramoji Film City offers umpteen numbers of film sets such as London Street, Hollywood sign, Japanese gardens, airport, hospital, etc. , landscapes and buildings as well as laboratories.
+    	</p></br>
+
+
+
+    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.267245362177!2d78.67857295049312!3d17.25430098810032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb098aaf875395%3A0xc344846c0208671b!2sRamoji+Film+City!5e0!3m2!1sen!2sin!4v1539290757850" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="dropdown-4" class="dropdown dropdown-processed">
+  <a class="dropdown-link" href="#" style="text-decoration: none;"><h2 style="color: black;" >Golkonda</h2></a>
+  <div class="dropdown-container" style="display: none;">
+     
+
+    <div class="text">
+
+    	<div class="imgloc">
+    		<img style="max-width: 100%;" src="./img/golkonda.jpg">
+    	</div>
+    	<p>  Golconda Fort Hyderabad is an outstanding example of brilliant engineering and magical architecture. Located at a distance of 11km from the city, it is the most famous of all Hyderabad sightseeing places. The name of the fort has been derived from the Telugu words "Golla" and "Konda" which together means 'Shepherd's Hill'. Founded in the approximately 12th Century by the Kakatiya Kings, this massive Golconda Fort with eight gates and 87 bastions was later built by Qutub Shahi Kings.
+    	</p></br>
+    	<p>One of the Hyderabad’s most popular and supreme monuments, Golconda Fort allures every visitor with its unparalleled beauty and grandeur. A Hyderabad Tour is incomplete without a visit to this fort.
+
+    	However, do keep in mind the Golconda Fort timings and entry fee before planning a visit to this regal symbol of history. For instance, Golconda fort timings are from 9 am to 5.30 pm. After that, visitors are not allowed to enter the fort, unless they are going for the light and show in night. Hence, to explore the beauty of this place at leisure, plan you visit early in the day.</p>
+
+
+    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.592954218057!2d78.39885875049491!3d17.38330898802261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb968ea6aea98f%3A0x6b76ecdfd65a335a!2sGolconda+Fort!5e0!3m2!1sen!2sin!4v1539290714341" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+   
+    </div>
+  </div>
+</div>
+
+
+
+
+</li>
+
+
+</ul>
+
+</article>
+			<!-- <aside id="sidebar">
+				<div class="dark">
+					
+				</div>
+			</aside> -->		
+		</div>
+	</section>
+
+	<div class="imgloc">
+		<img style="max-width: 100%;" src="./img/tcsfooter.jpg">
+	</div>
+
+</body>
+</html>

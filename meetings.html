@@ -1,0 +1,392 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agenda Application - Contacts </title>
+	<link rel="stylesheet" href="./css/style.css" />
+	
+  <style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+.modalDialog {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+    }
+
+    .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 250px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+    .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover { background: #00d9ff; }
+</style>
+</head>
+
+<body>
+
+  <div class="imgloc">
+    <img style="max-width: 100%;" src="./img/tcs501.jpg">
+  </div>
+
+<header>
+  <div class="container">
+
+   <ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li class="current"><a href="meetings.html">Meetings</a></li>   		
+  </ul>
+
+</div>
+</header>
+
+
+<section id="main">
+  <div class = "container">
+   <article id="main-col">
+   </br>
+    <!-- <h1 class="page-title"> MEETING DETAILS</h1> -->
+    <ul id="services">
+     <li style = "background-color: lightsteelblue;">
+      <h4>Start from hotel</h4>
+      <p> Time - 10/15/2018 - 10:00 AM to 11:00 AM</p>
+
+        <!-- Trigger/Open The Modal -->
+        <b>Chair - </b> 
+        <a href="#openModal1">Ms. Aravinda Sametha</a>
+
+<div id="openModal1" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Ms. Aravinda Sametha</h2>
+    <p><b>Description:</b> Ms. Aravinda Sametha will coordingate from the start of the Hotel</p>
+    <p> <b>Call :</b> <a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+
+
+      </li>
+      <li style ="background-color: ghostwhite;">
+        <h4>Security Check/Arrival to Board Room</h4>
+        <p> Time - 10/15/2018 - 11:00 AM to 12:00 PM</p>
+          <!-- Trigger/Open The Modal -->
+          <b>Chair - </b> 
+          <a href="#openModal2">Mr. Veera Raghava</a>
+
+  <div id="openModal2" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Veera Raghava</h2>
+    <p><b>Description:</b>Mr. Veera Raghava will corrdinate at the arrival of the Board Room</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+        </li>
+        <li style = "background-color: lightsteelblue;">
+          <h4>Welcome/Introductions</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal3">Mr. Arun </a>
+
+  <div id="openModal3" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Arun  </h2>
+    <p><b>Description:</b>Mr. Arun will introduce the meeting</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+		  <li style = "background-color: ghostwhite;">
+          <h4>About Tata, TCS , BFSI</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal4">Mr. Ajit </a>
+
+  <div id="openModal4" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Ajit  </h2>
+    <p><b>Description:</b>Mr. Ajit will speak about Tata, TCS and BFSI topics.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+		  <li style = "background-color: lightsteelblue;">
+          <h4>TCS Insurance/StateFarm Relationship Overview</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal5">Mr. Deepak </a>
+
+  <div id="openModal5" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about TCS Insurance/StateFarm Relationship Overview.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+<li style = "background-color: lightgreen;">
+          <h4>Lunch</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+
+          </li>
+<li style = "background-color: ghostwhite;">
+          <h4>Role of Cloud</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal6">Mr. Deepak </a>
+
+  <div id="openModal6" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about Role of Cloud and What are we doing for various customers / Industry Verticals.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+<li style = "background-color: lightsteelblue;">
+          <h4>TCS Machine First Model</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal7">Mr. Deepak </a>
+
+  <div id="openModal7" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about TCS Machine First Model - How Intelligent Automation/RPA is Helping Various Customers in their Journey</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+<li style = "background-color: ghostwhite;">
+          <h4>Helping customers in  Modernization / Digital/Customer Experience Journey</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal8">Mr. Deepak </a>
+
+  <div id="openModal8" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about how are we helping customers in their Modernization / Digital/Customer Experience Journey.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+<li style = "background-color: lightgreen;">
+          <h4>Break</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            
+          </li>
+
+		  <li style = "background-color: lightsteelblue;">
+          <h4>Analytics Journey</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal9">Mr. Deepak </a>
+
+  <div id="openModal9" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about how is TCS partnering with one of the largest retailers in the workd on their Analytics Journey.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+		  		  <li style = "background-color: ghostwhite;">
+          <h4>Agile Way of Living</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal10">Mr. Deepak </a>
+
+  <div id="openModal10" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about Agile Way of Living and Large Scale  Offshore Agile Delivery.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+		  		  <li style = "background-color: lightsteelblue;">
+          <h4>Wrap Up</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            <b>Chair - </b> 
+<a href="#openModal11">Mr. Deepak </a>
+
+  <div id="openModal11" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Mr. Deepak  </h2>
+    <p><b>Description:</b>Mr. Deepak will speak about Agile Way of Living and Large Scale  Offshore Agile Delivery.</p>
+    <p><b> Call : </b><a href="tel:5551234567">(555)123-4567</a></p>
+</div>
+</div>
+          </li>
+		  
+		  		  		  <li style = "background-color: ghostwhite;">
+          <h4>Travel Back to Home</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            
+          </li>
+		  
+		  		  		  		  <li style = "background-color: lightgreen;">
+          <h4>Dinner</h4>
+          <p> Time - 10/15/2018 - 1:00 PM to 2:00 PM</p>
+            <!-- Trigger/Open The Modal -->
+            
+          </li>
+		  
+		  
+		  
+		  
+		  
+		  
+        </ul>
+
+      </article>
+      		
+   </div>
+ </section>
+
+</br>
+	<div class="imgloc">
+		<img style="max-width: 100%;" src="./img/tcsfooter.jpg">
+	</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
